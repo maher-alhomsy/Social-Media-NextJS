@@ -18,9 +18,12 @@
     "@tiptap/react": "^2.5.5",
     "@tiptap/starter-kit": "^2.5.5",
     "@uploadthing/react": "^6.7.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "ky": "^1.4.0",
     "lucia": "^3.2.0",
+    "lucide-react": "^0.414.0",
     "next": "15.0.0-rc.0",
     "next-themes": "^0.3.0",
     "prisma": "^5.17.0",
@@ -32,6 +35,8 @@
     "react-linkify-it": "^1.0.8",
     "stream-chat": "^8.37.0",
     "stream-chat-react": "^11.23.3",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.13.2"
   },
   "devDependencies": {
