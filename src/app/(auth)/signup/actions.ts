@@ -10,7 +10,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
 
-export async function signup(
+export async function signUp(
   credentials: SignUpValues
 ): Promise<{ error: string }> {
   try {

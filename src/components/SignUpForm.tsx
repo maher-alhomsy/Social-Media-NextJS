@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useTransition } from "react";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -13,9 +15,13 @@ import {
 } from "./ui/form";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { signUp } from "@/app/(auth)/signup/actions";
 import { signUpSchema, SignUpValues } from "@/lib/validation";
 
 const SignUpForm = () => {
+  const [error, setError] = useState<string>();
+  const [isPending, startTransition] = useTransition();
+
   const form = useForm<SignUpValues>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -25,11 +31,21 @@ const SignUpForm = () => {
     },
   });
 
-  const onSubmit = async (values: SignUpValues) => {};
+  const onSubmit = async (values: SignUpValues) => {
+    setError(undefined);
+
+    startTransition(async () => {
+      const { error } = await signUp(values);
+
+      if (error) setError(error);
+    });
+  };
 
   return (
     <Form {...form}>
       <form className="space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
+        {error && <p className="text-center text-destructive">{error}</p>}
+
         <FormField
           control={form.control}
           name="username"
