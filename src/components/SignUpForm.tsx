@@ -18,6 +18,7 @@ import { Button } from "./ui/button";
 import { signUp } from "@/app/(auth)/signup/actions";
 import { signUpSchema, SignUpValues } from "@/lib/validation";
 import PasswordInput from "./PasswordInput";
+import LoadingButton from "./LoadingButton";
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>();
@@ -95,9 +96,9 @@ const SignUpForm = () => {
           )}
         />
 
-        <Button type="submit" className="w-full">
+        <LoadingButton loading={isPending} type="submit" className="w-full">
           Create Account
-        </Button>
+        </LoadingButton>
       </form>
     </Form>
   );
