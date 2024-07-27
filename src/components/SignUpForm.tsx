@@ -17,6 +17,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { signUp } from "@/app/(auth)/signup/actions";
 import { signUpSchema, SignUpValues } from "@/lib/validation";
+import PasswordInput from "./PasswordInput";
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>();
@@ -86,7 +87,7 @@ const SignUpForm = () => {
               <FormLabel>Password</FormLabel>
 
               <FormControl>
-                <Input placeholder="Password" type="password" {...field} />
+                <PasswordInput placeholder="Password" {...field} />
               </FormControl>
 
               <FormMessage />
