@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 
+import LoginForm from "@/components/LoginForm";
 import loginImage from "@/assets/login-image.jpg";
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ const Page = () => {
           <h1 className="text-center text-3xl font-bold">Login to bugbook</h1>
 
           <div className="space-y-5">
-            Login Form
+            <LoginForm />
+
             <Link href="/signup" className="block text-center hover:underline">
               Don&apos;t have an account? Sign up
             </Link>
