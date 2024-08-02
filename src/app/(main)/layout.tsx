@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 
 import Navbar from "@/components/Navbar";
+import MenuBar from "@/components/MenuBar";
 import { validateRequest } from "../../../auth";
 import SessionProvider from "@/context/session-provider";
-import MenuBar from "@/components/MenuBar";
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   const session = await validateRequest();

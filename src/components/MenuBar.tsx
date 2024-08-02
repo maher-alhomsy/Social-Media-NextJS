@@ -11,10 +11,10 @@ const MenuBar = ({ className }: Props) => {
   return (
     <div className={className}>
       <Button
+        asChild
+        title="Home"
         variant="ghost"
         className="flex items-center justify-start gap-3"
-        title="Home"
-        asChild
       >
         <Link href="/">
           <Home />
@@ -23,10 +23,10 @@ const MenuBar = ({ className }: Props) => {
       </Button>
 
       <Button
-        variant="ghost"
-        className="flex items-center justify-start gap-3"
-        title="Notifications"
         asChild
+        variant="ghost"
+        title="Notifications"
+        className="flex items-center justify-start gap-3"
       >
         <Link href="/notifications">
           <Bell />
@@ -35,10 +35,10 @@ const MenuBar = ({ className }: Props) => {
       </Button>
 
       <Button
-        variant="ghost"
-        className="flex items-center justify-start gap-3"
-        title="Messages"
         asChild
+        variant="ghost"
+        title="Messages"
+        className="flex items-center justify-start gap-3"
       >
         <Link href="/messages">
           <Mail />
@@ -47,10 +47,10 @@ const MenuBar = ({ className }: Props) => {
       </Button>
 
       <Button
-        variant="ghost"
-        className="flex items-center justify-start gap-3"
-        title="Bookmarks"
         asChild
+        variant="ghost"
+        title="Bookmarks"
+        className="flex items-center justify-start gap-3"
       >
         <Link href="/bookmarks">
           <Bookmark />
