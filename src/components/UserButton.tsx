@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 import UserAvatar from "./UserAvatar";
 import { logout } from "@/app/(auth)/actions";
 import { useSession } from "@/context/session-provider";
+import { useQueryClient } from "@tanstack/react-query";
 
 type Props = {
   className?: string;
@@ -28,6 +29,8 @@ type Props = {
 const UserButton = ({ className }: Props) => {
   const { user } = useSession();
   const { theme, setTheme } = useTheme();
+
+  const queryClient = useQueryClient();
 
   return (
     <DropdownMenu>
@@ -79,7 +82,12 @@ const UserButton = ({ className }: Props) => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem onClick={() => logout()}>
+        <DropdownMenuItem
+          onClick={() => {
+            queryClient.clear();
+            logout();
+          }}
+        >
           <LogOutIcon className="mr-2 size-4" />
           Logout
         </DropdownMenuItem>
